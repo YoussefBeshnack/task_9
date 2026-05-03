@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MaterialApp(home: TicTacToeUI()));
+void main() => runApp(const MaterialApp(debugShowCheckedModeBanner: false, home: TicTacToeUI()));
 
 class TicTacToeUI extends StatelessWidget {
   const TicTacToeUI({super.key});
@@ -39,15 +39,29 @@ class TicTacToeUI extends StatelessWidget {
     );
   }
 
-  Widget _buildCell(int index, {bool left = true, bool right = true, bool top = true, bool bottom = true}) {
+  Widget _buildCell(
+    int index, {
+    bool left = true,
+    bool right = true,
+    bool top = true,
+    bool bottom = true,
+  }) {
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
           border: Border(
-            left: left ? const BorderSide(color: Colors.black, width: 2) : BorderSide.none,
-            right: right ? const BorderSide(color: Colors.black, width: 2) : BorderSide.none,
-            top: top ? const BorderSide(color: Colors.black, width: 2) : BorderSide.none,
-            bottom: bottom ? const BorderSide(color: Colors.black, width: 2) : BorderSide.none,
+            left: left
+                ? const BorderSide(color: Colors.black, width: 2)
+                : BorderSide.none,
+            right: right
+                ? const BorderSide(color: Colors.black, width: 2)
+                : BorderSide.none,
+            top: top
+                ? const BorderSide(color: Colors.black, width: 2)
+                : BorderSide.none,
+            bottom: bottom
+                ? const BorderSide(color: Colors.black, width: 2)
+                : BorderSide.none,
           ),
         ),
       ),
